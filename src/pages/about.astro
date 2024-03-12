@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A propos">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Découvrer mon parcours et mes compétences."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Mermoz MAHATEHAKA at work"
+				/>
+			</Hero>
+
+
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+					<p>2023 Master en Informatique à l'Ecole National d'Informatique de l'université de Fianarantsoa.</p><br>
+					<p>2020 Licence en Informatique à l'Ecole National d'Informatique de l'université de Fianarantsoa.</p><br>
+					<p>2017 Baccalauréat série D au Lycée Raherivelo Ramamonjy Fianarantsoa.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Stage et expérience professionnelles</h2>
+				<div class="content">
+					<p>2023 Stage à l’Office  des Transmissions Militaire de l’État.</p>
+					<p>Thème du stage : Développement mobile pour le transfert des résultats électoraux avec React Native.</p>
+					<p> Durée du stage : Cinq mois.</p><br>
+					
+					<p>2022 Projet de développement web au sein de l’École Nationale d'Informatique.</p>
+					<p> Thème : Gestion de réservation de vol avec SPRING, Hibernate et Gestion de location de voiture en devellopement mobile avec React Native.</p><br>
+
+					<p>2021 Stage au Ministère de l’Aménagement du Territoire et des Travaux Publics.</p>
+					<p>Thème du stage : Informatisation de la gestion des formations et diplômes du personnel avec React.</p>
+					<p>Durée du stage : Trois mois et deux semaine
+</p><br>
+
+					<p>2020 Projet de développement web au sein de l’École Nationale d'Informatique.</p>
+					<p>Thème : Gestion Bancaire en Java web </p><br>
+					<p>2019 Stage au sein du l’Organisation NonGouvernementale ODEFI (Opérateur de Développement et de Formation Intégré).</p>
+					</p>Thème du stage : Conception et réalisation d’une application agenda du personnel du l’ONG ODEFI avec C#.</p>
+					<p>Durée du stage: Trois mois et une semaine.</p>
+
+			</section>
+			<section>
+				<h2 class="section-title">Langages</h2>
+				<div class="content">
+					<p>PHP, JavaScript, Java</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Framwork</h2>
+				<div class="content">
+					<p>NodeJs, ReactJs, React Native.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Curieux, Créatif, Autonome, Organisé; Dynamique, Polyvalent</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Sport</h2>
+				<div class="content">
+					<p>Football, Basket-ball</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Loisirs</h2>
+				<div class="content">
+					<p>Danser, Jeux video, ecoute de la musique</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
